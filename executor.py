@@ -55,7 +55,7 @@ class ExecutorSimpleFileServer(Executor):
         - check if the document has a blob
     
     For image tensors, the exceutor will assume that it is an image, and save it to the file server
-    based on the assumed file extension (default is png).
+    based on the assumed file extension (default is jpg).
     
     If the document has a blob, the executor will first see if there is a mime_type field.
     If no mime type is found, it will look for a tag with `file` in the key, and check 
@@ -151,7 +151,6 @@ class ExecutorSimpleFileServer(Executor):
                     uid = str(uuid.uuid4())
                     fn = f"{uid}{ext}"
                     fp = f"{tmpdir}/{fn}"
-                    
                     doc.save_image_tensor_to_file(fp)
                     new_url = self._post_to_file_server(did, fp, mtype)
                     doc.uri = new_url
