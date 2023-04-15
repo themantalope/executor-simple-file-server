@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  simple-file-server:
+    image: flaviostutz/simple-file-server
+    ports:
+      - "{{port}}:4000"
+    environment:
+      - WRITE_SHARED_KEY=
+      - READ_SHARED_KEY=
+      - LOCATION_BASE_URL={{base_url}}
+      - LOG_LEVEL=debug
+    volumes:
+      - {{workspace}}:/data

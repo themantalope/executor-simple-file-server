@@ -1,0 +1,8 @@
+jtype: SimpleFileServer
+py_modules:
+  - executor.py
+metas:
+  name: SimpleFileServer
+  description:
+  url:
+  keywords: []
