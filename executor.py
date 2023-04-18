@@ -158,7 +158,7 @@ class ExecutorSimpleFileServer(Executor):
                     new_url = self._post_to_file_server(did, fp, mtype)
                     doc.uri = new_url
                     doc.mime_type = mtype
-                    if self.extnernal_host is not None:
+                    if self.external_host is not None:
                         doc.tags["external_url"] = doc.uri.replace(self.base_url, self.external_host)
                     else:
                         doc.tags['external_url'] = None
