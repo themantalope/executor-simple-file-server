@@ -145,7 +145,7 @@ class ExecutorSimpleFileServer(Executor):
                         doc.tags['external_url'] = None
                     
                     if self.set_as_tag:
-                        docs.tags['file_url'] = new_url
+                        doc.tags['file_url'] = new_url
                 
                 
                     
@@ -169,7 +169,7 @@ class ExecutorSimpleFileServer(Executor):
                         doc.tags['external_url'] = None
                         
                     if self.set_as_tag:
-                        docs.tags['file_url'] = new_url
+                        doc.tags['file_url'] = new_url
                     
                     
                 
