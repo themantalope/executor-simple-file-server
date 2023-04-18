@@ -4,5 +4,5 @@ py_modules:
 metas:
   name: ExecutorSimpleFileServer
   description:
-  url:
-  keywords: []
+  url: https://github.com/themantalope/executor-simple-file-server
+  keywords: [docker, docker-compose, executor, file server]
