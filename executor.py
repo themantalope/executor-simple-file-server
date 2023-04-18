@@ -13,7 +13,10 @@ import mimetypes
 logger = JinaLogger('simple-file-server')
 
 
-environment = j2.Environment(loader=j2.FileSystemLoader("templates/"))
+base_dir = os.path.dirname(os.path.abspath(__file__))
+template_dir = os.path.join(base_dir, "templates")
+
+environment = j2.Environment(loader=j2.FileSystemLoader(template_dir))
 template = environment.get_template("simple-docker-config.yml.jinja")
 
 
