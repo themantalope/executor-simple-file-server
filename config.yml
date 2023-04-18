@@ -3,6 +3,6 @@ py_modules:
   - executor.py
 metas:
   name: ExecutorSimpleFileServer
-  description:
+  description: Executor that interfaces with the [flaviostutz/simple-file-server](https://hub.docker.com/r/flaviostutz/simple-file-server) image.
   url: https://github.com/themantalope/executor-simple-file-server
   keywords: [docker, docker-compose, executor, file server]
