@@ -154,7 +154,7 @@ class ExecutorSimpleFileServer(Executor):
                     uid = str(uuid.uuid4())
                     fn = f"{uid}{ext}"
                     fp = f"{tmpdir}/{fn}"
-                    doc.save_image_tensor_to_file(fp)
+                    doc.save_image_tensor_to_file(fp, image_format='jpeg')
                     new_url = self._post_to_file_server(did, fp, mtype)
                     doc.uri = new_url
                     doc.mime_type = mtype
