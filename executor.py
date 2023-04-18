@@ -71,6 +71,7 @@ class ExecutorSimpleFileServer(Executor):
                  external_host: Optional[str] = None,
                  port: int = 4000,
                  teardown: bool = False,
+                 set_as_tag: bool = True,
                  metas: Optional[Dict] = None, 
                  requests: Optional[Dict] = None, 
                  runtime_args: Optional[Dict] = None, 
@@ -83,6 +84,7 @@ class ExecutorSimpleFileServer(Executor):
         self.base_url = f"http://{self.host}:{self.port}"
         self.external_host = external_host
         self.teardown = teardown
+        self.set_as_tag = set_as_tag
         # make sure workspace exists and we have the absolute path
         if not os.path.isdir(workspace):
             os.makedirs(workspace)
@@ -141,6 +143,9 @@ class ExecutorSimpleFileServer(Executor):
                         doc.tags["external_url"] = doc.uri.replace(self.base_url, self.external_host)
                     else:
                         doc.tags['external_url'] = None
+                    
+                    if self.set_as_tag:
+                        docs.tags['file_url'] = new_url
                 
                 
                     
@@ -162,6 +167,9 @@ class ExecutorSimpleFileServer(Executor):
                         doc.tags["external_url"] = doc.uri.replace(self.base_url, self.external_host)
                     else:
                         doc.tags['external_url'] = None
+                        
+                    if self.set_as_tag:
+                        docs.tags['file_url'] = new_url
                     
                     
                 
