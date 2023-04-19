@@ -108,7 +108,7 @@ class ExecutorSimpleFileServer(Executor):
             logger.info(f"\n{self.base_template}")
             with open(f"{self.workspace}/docker-compose.yml", "w") as f:
                 f.write(self.base_template)
-            subprocess.run(["docker compose", "-f", f"{self.workspace}/docker-compose.yml", "up", "-d"])
+            subprocess.run(["docker",  "compose", "-f", f"{self.workspace}/docker-compose.yml", "up", "-d"])
             logger.info('file server started, checking connection...')
             # sleep for 5 seconds to wait for the file server to start
             time.sleep(5)
