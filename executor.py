@@ -139,13 +139,13 @@ class ExecutorSimpleFileServer(Executor):
                     new_url = self._post_to_file_server(did, fp, mtype)
                     doc.uri = new_url
                     doc.mime_type = mtype
-                    if self.external_host is not None:
-                        doc.tags["external_url"] = doc.uri.replace(self.base_url, self.external_host)
-                    else:
-                        doc.tags['external_url'] = None
-                    
                     if self.set_as_tag:
                         doc.tags['file_url'] = new_url
+                        
+                    if self.external_host is not None:
+                        doc.tags["external_url"] = doc.tags['file_url'].replace(self.base_url, self.external_host)
+                    else:
+                        doc.tags['external_url'] = None
                 
                 
                     
@@ -164,13 +164,13 @@ class ExecutorSimpleFileServer(Executor):
                     new_url = self._post_to_file_server(did, fp, mtype)
                     doc.uri = new_url
                     doc.mime_type = mtype
-                    if self.external_host is not None:
-                        doc.tags["external_url"] = doc.uri.replace(self.base_url, self.external_host)
-                    else:
-                        doc.tags['external_url'] = None
-                        
                     if self.set_as_tag:
                         doc.tags['file_url'] = new_url
+                        
+                    if self.external_host is not None:
+                        doc.tags["external_url"] = doc.tags['file_url'].replace(self.base_url, self.external_host)
+                    else:
+                        doc.tags['external_url'] = None
                     
                     
                 
