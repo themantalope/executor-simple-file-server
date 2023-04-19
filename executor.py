@@ -152,7 +152,8 @@ class ExecutorSimpleFileServer(Executor):
             if doc.tensor is not None:
                 # we are going to assume that is a jpg
                 mtype = "image/jpeg"
-                ext = mimetypes.guess_extension(mtype)
+                # ext = mimetypes.guess_extension(mtype)
+                ext = ".jpeg"
                 did = doc.id
                 # save to temp file
                 with tempfile.TemporaryDirectory() as tmpdir:
